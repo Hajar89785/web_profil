@@ -1,16 +1,20 @@
 <!DOCTYPE html>
 <html lang="id" class="scroll-smooth">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>DigiLib &mdash; Perpustakaan Digital Modern</title>
-  <meta name="description" content="DigiLib adalah perpustakaan digital modern yang menyediakan ribuan koleksi buku fiksi, teknologi, sains, sejarah, dan bisnis." />
+  <meta name="description"
+    content="DigiLib adalah perpustakaan digital modern yang menyediakan ribuan koleksi buku fiksi, teknologi, sains, sejarah, dan bisnis." />
 
   <script src="https://cdn.tailwindcss.com"></script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800&display=swap"
+    rel="stylesheet" />
 
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
 
@@ -19,13 +23,13 @@
       theme: {
         extend: {
           fontFamily: {
-            sans: ["Inter","sans-serif"],
-            serif: ["Playfair Display","serif"],
+            sans: ["Inter", "sans-serif"],
+            serif: ["Playfair Display", "serif"],
           },
           colors: {
-            primary: { 50:"#eef2ff",100:"#e0e7ff",200:"#c7d2fe",300:"#a5b4fc",400:"#818cf8",500:"#6366f1",600:"#4f46e5",700:"#4338ca",800:"#3730a3",900:"#312e81" },
-            accent:  { 400:"#fb923c",500:"#f97316",600:"#ea580c" },
-            dark:    { 800:"#0f172a",900:"#020617" },
+            primary: { 50: "#eef2ff", 100: "#e0e7ff", 200: "#c7d2fe", 300: "#a5b4fc", 400: "#818cf8", 500: "#6366f1", 600: "#4f46e5", 700: "#4338ca", 800: "#3730a3", 900: "#312e81" },
+            accent: { 400: "#fb923c", 500: "#f97316", 600: "#ea580c" },
+            dark: { 800: "#0f172a", 900: "#020617" },
           },
           backgroundImage: {
             "hero-gradient": "linear-gradient(135deg,#0f172a 0%,#1e1b4b 50%,#0f172a 100%)",
@@ -34,8 +38,8 @@
             "float": "float 6s ease-in-out infinite",
           },
           keyframes: {
-            float: { "0%,100%":{ transform:"translateY(0px)" }, "50%":{ transform:"translateY(-12px)" } },
-            fadeInUp: { from:{ opacity:"0", transform:"translateY(30px)" }, to:{ opacity:"1", transform:"translateY(0)" } },
+            float: { "0%,100%": { transform: "translateY(0px)" }, "50%": { transform: "translateY(-12px)" } },
+            fadeInUp: { from: { opacity: "0", transform: "translateY(30px)" }, to: { opacity: "1", transform: "translateY(0)" } },
           },
         },
       },
@@ -43,25 +47,109 @@
   </script>
 
   <style>
-    ::-webkit-scrollbar{width:6px}
-    ::-webkit-scrollbar-track{background:#0f172a}
-    ::-webkit-scrollbar-thumb{background:#4f46e5;border-radius:3px}
-    .glass{background:rgba(255,255,255,.05);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.08)}
-    .glass-card{background:rgba(255,255,255,.04);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.07)}
-    .gradient-text{background:linear-gradient(135deg,#818cf8,#f97316,#fb923c);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-    .navbar-scrolled{background:rgba(15,23,42,.92)!important;backdrop-filter:blur(20px);box-shadow:0 1px 0 rgba(255,255,255,.06)}
-    .orb{position:absolute;border-radius:50%;filter:blur(80px);opacity:.25;pointer-events:none}
-    .book-card{transition:transform .3s ease,box-shadow .3s ease}
-    .book-card:hover{transform:translateY(-8px);box-shadow:0 24px 48px rgba(99,102,241,.25)}
-    .book-card:hover .book-cover{transform:scale(1.05)}
-    .book-cover{transition:transform .4s ease}
-    .cat-card{transition:transform .25s ease,box-shadow .25s ease}
-    .cat-card:hover{transform:translateY(-4px) scale(1.02)}
-    .search-glow:focus-within{box-shadow:0 0 0 3px rgba(99,102,241,.4),0 20px 60px rgba(99,102,241,.2)}
-    #mobile-menu{transition:max-height .35s ease,opacity .35s ease;overflow:hidden}
-    #mobile-menu.hidden{max-height:0;opacity:0}
-    #mobile-menu.open{max-height:400px;opacity:1}
-    @keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+    ::-webkit-scrollbar {
+      width: 6px
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #0f172a
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #4f46e5;
+      border-radius: 3px
+    }
+
+    .glass {
+      background: rgba(255, 255, 255, .05);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, .08)
+    }
+
+    .glass-card {
+      background: rgba(255, 255, 255, .04);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, .07)
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, #818cf8, #f97316, #fb923c);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text
+    }
+
+    .navbar-scrolled {
+      background: rgba(15, 23, 42, .92) !important;
+      backdrop-filter: blur(20px);
+      box-shadow: 0 1px 0 rgba(255, 255, 255, .06)
+    }
+
+    .orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: .25;
+      pointer-events: none
+    }
+
+    .book-card {
+      transition: transform .3s ease, box-shadow .3s ease
+    }
+
+    .book-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 24px 48px rgba(99, 102, 241, .25)
+    }
+
+    .book-card:hover .book-cover {
+      transform: scale(1.05)
+    }
+
+    .book-cover {
+      transition: transform .4s ease
+    }
+
+    .cat-card {
+      transition: transform .25s ease, box-shadow .25s ease
+    }
+
+    .cat-card:hover {
+      transform: translateY(-4px) scale(1.02)
+    }
+
+    .search-glow:focus-within {
+      box-shadow: 0 0 0 3px rgba(99, 102, 241, .4), 0 20px 60px rgba(99, 102, 241, .2)
+    }
+
+    #mobile-menu {
+      transition: max-height .35s ease, opacity .35s ease;
+      overflow: hidden
+    }
+
+    #mobile-menu.hidden {
+      max-height: 0;
+      opacity: 0
+    }
+
+    #mobile-menu.open {
+      max-height: 400px;
+      opacity: 1
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px)
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0)
+      }
+    }
 
     /* ── Modal overlay ── */
     #book-modal-overlay {
@@ -79,6 +167,7 @@
       pointer-events: none;
       transition: opacity 0.3s ease;
     }
+
     #book-modal-overlay.modal-open {
       opacity: 1;
       pointer-events: all;
@@ -87,7 +176,7 @@
     /* ── Modal panel ── */
     #book-modal-panel {
       background: linear-gradient(145deg, #1e293b, #0f172a);
-      border: 1px solid rgba(255,255,255,0.1);
+      border: 1px solid rgba(255, 255, 255, 0.1);
       border-radius: 1.5rem;
       max-width: 720px;
       width: 100%;
@@ -96,23 +185,35 @@
       transform: scale(0.92) translateY(24px);
       transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.3s ease;
       opacity: 0;
-      box-shadow: 0 40px 80px rgba(0,0,0,0.6), 0 0 0 1px rgba(99,102,241,0.15);
+      box-shadow: 0 40px 80px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(99, 102, 241, 0.15);
       scrollbar-width: thin;
       scrollbar-color: #4f46e5 #0f172a;
     }
+
     #book-modal-overlay.modal-open #book-modal-panel {
       transform: scale(1) translateY(0);
       opacity: 1;
     }
-    #book-modal-panel::-webkit-scrollbar { width: 5px; }
-    #book-modal-panel::-webkit-scrollbar-track { background: #0f172a; }
-    #book-modal-panel::-webkit-scrollbar-thumb { background: #4f46e5; border-radius: 3px; }
+
+    #book-modal-panel::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    #book-modal-panel::-webkit-scrollbar-track {
+      background: #0f172a;
+    }
+
+    #book-modal-panel::-webkit-scrollbar-thumb {
+      background: #4f46e5;
+      border-radius: 3px;
+    }
 
     /* ── Modal cover shimmer ── */
     .modal-cover-wrap {
       position: relative;
       overflow: hidden;
     }
+
     .modal-cover-wrap::after {
       content: '';
       position: absolute;
@@ -127,19 +228,32 @@
       gap: 0.5rem;
       padding: 0.5rem 0.85rem;
       border-radius: 0.75rem;
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.08);
       font-size: 0.8rem;
       color: #94a3b8;
     }
-    .info-pill strong { color: #f8fafc; }
+
+    .info-pill strong {
+      color: #f8fafc;
+    }
 
     /* ── Confirm button pulse ── */
     @keyframes btnPulse {
-      0%,100% { box-shadow: 0 0 0 0 rgba(99,102,241,0.5); }
-      50%      { box-shadow: 0 0 0 8px rgba(99,102,241,0); }
+
+      0%,
+      100% {
+        box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.5);
+      }
+
+      50% {
+        box-shadow: 0 0 0 8px rgba(99, 102, 241, 0);
+      }
     }
-    #modal-btn-confirm:not(:disabled):hover { animation: btnPulse 1.2s ease infinite; }
+
+    #modal-btn-confirm:not(:disabled):hover {
+      animation: btnPulse 1.2s ease infinite;
+    }
   </style>
 </head>
 
@@ -151,7 +265,8 @@
       <div class="flex items-center justify-between h-16 md:h-20">
 
         <a href="#" id="logo-link" class="flex items-center gap-2.5 group" aria-label="DigiLib Beranda">
-          <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center shadow-lg shadow-primary-500/40 group-hover:shadow-primary-500/60 transition-shadow">
+          <div
+            class="w-9 h-9 rounded-xl bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center shadow-lg shadow-primary-500/40 group-hover:shadow-primary-500/60 transition-shadow">
             <i data-lucide="book-open" class="w-5 h-5 text-white"></i>
           </div>
           <span class="text-xl font-bold tracking-tight">
@@ -160,17 +275,28 @@
         </a>
 
         <ul class="hidden md:flex items-center gap-1" role="navigation" aria-label="Menu Utama">
-          <li><a href="#beranda"  id="nav-beranda"  class="px-4 py-2 rounded-lg text-sm font-medium text-slate-300 hover:text-white hover:bg-white/10 transition-all">Beranda</a></li>
-          <li><a href="#katalog"  id="nav-katalog"  class="px-4 py-2 rounded-lg text-sm font-medium text-slate-300 hover:text-white hover:bg-white/10 transition-all">Katalog</a></li>
-          <li><a href="#kategori" id="nav-kategori" class="px-4 py-2 rounded-lg text-sm font-medium text-slate-300 hover:text-white hover:bg-white/10 transition-all">Kategori</a></li>
-          <li><a href="#favorit"  id="nav-favorit"  class="px-4 py-2 rounded-lg text-sm font-medium text-slate-300 hover:text-white hover:bg-white/10 transition-all">Favorit</a></li>
+          <li><a href="#beranda" id="nav-beranda"
+              class="px-4 py-2 rounded-lg text-sm font-medium text-slate-300 hover:text-white hover:bg-white/10 transition-all">Beranda</a>
+          </li>
+          <li><a href="#katalog" id="nav-katalog"
+              class="px-4 py-2 rounded-lg text-sm font-medium text-slate-300 hover:text-white hover:bg-white/10 transition-all">Katalog</a>
+          </li>
+          <li><a href="#kategori" id="nav-kategori"
+              class="px-4 py-2 rounded-lg text-sm font-medium text-slate-300 hover:text-white hover:bg-white/10 transition-all">Kategori</a>
+          </li>
+          <li><a href="#favorit" id="nav-favorit"
+              class="px-4 py-2 rounded-lg text-sm font-medium text-slate-300 hover:text-white hover:bg-white/10 transition-all">Favorit</a>
+          </li>
         </ul>
 
         <div class="flex items-center gap-3">
-          <a href="#login" id="btn-login" class="hidden md:inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-primary-600 hover:bg-primary-500 text-white text-sm font-semibold transition-all duration-200 shadow-lg shadow-primary-600/30 hover:scale-105">
+          <a href="#login" id="btn-login"
+            class="hidden md:inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-primary-600 hover:bg-primary-500 text-white text-sm font-semibold transition-all duration-200 shadow-lg shadow-primary-600/30 hover:scale-105">
             <i data-lucide="log-in" class="w-4 h-4"></i> Login
           </a>
-          <button id="hamburger-btn" class="md:hidden p-2 rounded-lg text-slate-300 hover:text-white hover:bg-white/10 transition-all" aria-label="Buka menu" aria-expanded="false" aria-controls="mobile-menu">
+          <button id="hamburger-btn"
+            class="md:hidden p-2 rounded-lg text-slate-300 hover:text-white hover:bg-white/10 transition-all"
+            aria-label="Buka menu" aria-expanded="false" aria-controls="mobile-menu">
             <i data-lucide="menu" class="w-5 h-5" id="hamburger-icon"></i>
           </button>
         </div>
@@ -179,12 +305,21 @@
 
       <div id="mobile-menu" class="hidden md:hidden glass rounded-2xl mb-4 p-2">
         <ul class="flex flex-col gap-1">
-          <li><a href="#beranda"  class="mobile-nav-link block px-4 py-3 rounded-xl text-sm font-medium text-slate-300 hover:text-white hover:bg-white/10 transition-all">Beranda</a></li>
-          <li><a href="#katalog"  class="mobile-nav-link block px-4 py-3 rounded-xl text-sm font-medium text-slate-300 hover:text-white hover:bg-white/10 transition-all">Katalog</a></li>
-          <li><a href="#kategori" class="mobile-nav-link block px-4 py-3 rounded-xl text-sm font-medium text-slate-300 hover:text-white hover:bg-white/10 transition-all">Kategori</a></li>
-          <li><a href="#favorit"  class="mobile-nav-link block px-4 py-3 rounded-xl text-sm font-medium text-slate-300 hover:text-white hover:bg-white/10 transition-all">Favorit</a></li>
+          <li><a href="#beranda"
+              class="mobile-nav-link block px-4 py-3 rounded-xl text-sm font-medium text-slate-300 hover:text-white hover:bg-white/10 transition-all">Beranda</a>
+          </li>
+          <li><a href="#katalog"
+              class="mobile-nav-link block px-4 py-3 rounded-xl text-sm font-medium text-slate-300 hover:text-white hover:bg-white/10 transition-all">Katalog</a>
+          </li>
+          <li><a href="#kategori"
+              class="mobile-nav-link block px-4 py-3 rounded-xl text-sm font-medium text-slate-300 hover:text-white hover:bg-white/10 transition-all">Kategori</a>
+          </li>
+          <li><a href="#favorit"
+              class="mobile-nav-link block px-4 py-3 rounded-xl text-sm font-medium text-slate-300 hover:text-white hover:bg-white/10 transition-all">Favorit</a>
+          </li>
           <li class="pt-1 border-t border-white/10">
-            <a href="#login" class="flex items-center gap-2 px-4 py-3 rounded-xl text-sm font-semibold text-primary-400 hover:bg-primary-600/20 transition-all">
+            <a href="#login"
+              class="flex items-center gap-2 px-4 py-3 rounded-xl text-sm font-semibold text-primary-400 hover:bg-primary-600/20 transition-all">
               <i data-lucide="log-in" class="w-4 h-4"></i> Login
             </a>
           </li>
@@ -194,15 +329,19 @@
   </header>
 
   <!-- ==================== HERO ==================== -->
-  <section id="beranda" class="relative min-h-screen flex items-center justify-center overflow-hidden bg-hero-gradient pt-20">
+  <section id="beranda"
+    class="relative min-h-screen flex items-center justify-center overflow-hidden bg-hero-gradient pt-20">
     <div class="orb w-96 h-96 bg-primary-600" style="top:-100px;left:-150px"></div>
     <div class="orb w-80 h-80 bg-accent-500" style="bottom:-80px;right:-100px;opacity:.18"></div>
     <div class="orb w-64 h-64 bg-purple-500" style="top:40%;left:60%;opacity:.12"></div>
-    <div class="absolute inset-0" style="opacity:.04;background-image:linear-gradient(rgba(255,255,255,.5) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.5) 1px,transparent 1px);background-size:60px 60px"></div>
+    <div class="absolute inset-0"
+      style="opacity:.04;background-image:linear-gradient(rgba(255,255,255,.5) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.5) 1px,transparent 1px);background-size:60px 60px">
+    </div>
 
     <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-20">
 
-      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass text-sm font-medium text-primary-300 mb-8 border border-primary-500/30">
+      <div
+        class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass text-sm font-medium text-primary-300 mb-8 border border-primary-500/30">
         <span class="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse"></span>
         Koleksi terbaru sudah tersedia &bull; 2026
       </div>
@@ -233,11 +372,14 @@
       </div>
 
       <div class="max-w-2xl mx-auto">
-        <div class="search-glow flex items-center gap-3 glass rounded-2xl p-2 pl-5 transition-all duration-300 border border-white/10">
+        <div
+          class="search-glow flex items-center gap-3 glass rounded-2xl p-2 pl-5 transition-all duration-300 border border-white/10">
           <i data-lucide="search" class="w-5 h-5 text-slate-400 flex-shrink-0"></i>
           <input id="search-input" type="search" placeholder="Cari judul buku, penulis, atau kategori&hellip;"
-            class="flex-1 bg-transparent text-white placeholder-slate-500 outline-none text-base py-3" aria-label="Cari buku" />
-          <button id="btn-search" class="flex-shrink-0 px-6 py-3 rounded-xl bg-primary-600 hover:bg-primary-500 text-white font-semibold text-sm transition-all hover:scale-105 shadow-lg shadow-primary-600/30">
+            class="flex-1 bg-transparent text-white placeholder-slate-500 outline-none text-base py-3"
+            aria-label="Cari buku" />
+          <button id="btn-search"
+            class="flex-shrink-0 px-6 py-3 rounded-xl bg-primary-600 hover:bg-primary-500 text-white font-semibold text-sm transition-all hover:scale-105 shadow-lg shadow-primary-600/30">
             Cari
           </button>
         </div>
@@ -250,7 +392,8 @@
       </div>
 
       <div class="mt-16 flex justify-center animate-bounce">
-        <a href="#kategori" aria-label="Gulir ke bawah" class="p-2 rounded-full glass text-slate-400 hover:text-white transition-colors">
+        <a href="#kategori" aria-label="Gulir ke bawah"
+          class="p-2 rounded-full glass text-slate-400 hover:text-white transition-colors">
           <i data-lucide="chevron-down" class="w-5 h-5"></i>
         </a>
       </div>
@@ -260,19 +403,23 @@
 
   <!-- ==================== KATEGORI ==================== -->
   <section id="kategori" class="py-24 bg-slate-950 relative overflow-hidden">
-    <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary-500/40 to-transparent"></div>
+    <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary-500/40 to-transparent">
+    </div>
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
       <div class="text-center mb-14">
         <p class="text-primary-400 text-sm font-semibold tracking-widest uppercase mb-3">Telusuri Koleksi</p>
         <h2 class="font-serif text-4xl md:text-5xl font-bold text-white mb-4">Kategori Buku</h2>
-        <p class="text-slate-400 text-base max-w-lg mx-auto">Pilih genre favoritmu dan temukan ribuan judul yang menunggu untuk dibaca.</p>
+        <p class="text-slate-400 text-base max-w-lg mx-auto">Pilih genre favoritmu dan temukan ribuan judul yang
+          menunggu untuk dibaca.</p>
       </div>
 
       <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
 
-        <a href="#" id="cat-fiksi" class="cat-card glass-card rounded-2xl p-6 flex flex-col items-center gap-4 cursor-pointer group border border-white/5 hover:border-pink-500/40">
-          <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-pink-500/30 to-rose-600/30 flex items-center justify-center group-hover:from-pink-500/50 group-hover:to-rose-600/50 transition-all">
+        <a href="#" id="cat-fiksi"
+          class="cat-card glass-card rounded-2xl p-6 flex flex-col items-center gap-4 cursor-pointer group border border-white/5 hover:border-pink-500/40">
+          <div
+            class="w-14 h-14 rounded-2xl bg-gradient-to-br from-pink-500/30 to-rose-600/30 flex items-center justify-center group-hover:from-pink-500/50 group-hover:to-rose-600/50 transition-all">
             <i data-lucide="book-heart" class="w-7 h-7 text-pink-400"></i>
           </div>
           <div class="text-center">
@@ -281,8 +428,10 @@
           </div>
         </a>
 
-        <a href="#" id="cat-teknologi" class="cat-card glass-card rounded-2xl p-6 flex flex-col items-center gap-4 cursor-pointer group border border-white/5 hover:border-cyan-500/40">
-          <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-cyan-500/30 to-blue-600/30 flex items-center justify-center group-hover:from-cyan-500/50 group-hover:to-blue-600/50 transition-all">
+        <a href="#" id="cat-teknologi"
+          class="cat-card glass-card rounded-2xl p-6 flex flex-col items-center gap-4 cursor-pointer group border border-white/5 hover:border-cyan-500/40">
+          <div
+            class="w-14 h-14 rounded-2xl bg-gradient-to-br from-cyan-500/30 to-blue-600/30 flex items-center justify-center group-hover:from-cyan-500/50 group-hover:to-blue-600/50 transition-all">
             <i data-lucide="cpu" class="w-7 h-7 text-cyan-400"></i>
           </div>
           <div class="text-center">
@@ -291,8 +440,10 @@
           </div>
         </a>
 
-        <a href="#" id="cat-sains" class="cat-card glass-card rounded-2xl p-6 flex flex-col items-center gap-4 cursor-pointer group border border-white/5 hover:border-emerald-500/40">
-          <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-emerald-500/30 to-teal-600/30 flex items-center justify-center group-hover:from-emerald-500/50 group-hover:to-teal-600/50 transition-all">
+        <a href="#" id="cat-sains"
+          class="cat-card glass-card rounded-2xl p-6 flex flex-col items-center gap-4 cursor-pointer group border border-white/5 hover:border-emerald-500/40">
+          <div
+            class="w-14 h-14 rounded-2xl bg-gradient-to-br from-emerald-500/30 to-teal-600/30 flex items-center justify-center group-hover:from-emerald-500/50 group-hover:to-teal-600/50 transition-all">
             <i data-lucide="flask-conical" class="w-7 h-7 text-emerald-400"></i>
           </div>
           <div class="text-center">
@@ -301,8 +452,10 @@
           </div>
         </a>
 
-        <a href="#" id="cat-sejarah" class="cat-card glass-card rounded-2xl p-6 flex flex-col items-center gap-4 cursor-pointer group border border-white/5 hover:border-amber-500/40">
-          <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-amber-500/30 to-orange-600/30 flex items-center justify-center group-hover:from-amber-500/50 group-hover:to-orange-600/50 transition-all">
+        <a href="#" id="cat-sejarah"
+          class="cat-card glass-card rounded-2xl p-6 flex flex-col items-center gap-4 cursor-pointer group border border-white/5 hover:border-amber-500/40">
+          <div
+            class="w-14 h-14 rounded-2xl bg-gradient-to-br from-amber-500/30 to-orange-600/30 flex items-center justify-center group-hover:from-amber-500/50 group-hover:to-orange-600/50 transition-all">
             <i data-lucide="landmark" class="w-7 h-7 text-amber-400"></i>
           </div>
           <div class="text-center">
@@ -311,8 +464,10 @@
           </div>
         </a>
 
-        <a href="#" id="cat-bisnis" class="cat-card glass-card rounded-2xl p-6 flex flex-col items-center gap-4 cursor-pointer group border border-white/5 hover:border-violet-500/40">
-          <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-violet-500/30 to-purple-600/30 flex items-center justify-center group-hover:from-violet-500/50 group-hover:to-purple-600/50 transition-all">
+        <a href="#" id="cat-bisnis"
+          class="cat-card glass-card rounded-2xl p-6 flex flex-col items-center gap-4 cursor-pointer group border border-white/5 hover:border-violet-500/40">
+          <div
+            class="w-14 h-14 rounded-2xl bg-gradient-to-br from-violet-500/30 to-purple-600/30 flex items-center justify-center group-hover:from-violet-500/50 group-hover:to-purple-600/50 transition-all">
             <i data-lucide="briefcase-business" class="w-7 h-7 text-violet-400"></i>
           </div>
           <div class="text-center">
@@ -327,8 +482,11 @@
 
   <!-- ==================== KATALOG ==================== -->
   <section id="katalog" class="py-24 bg-dark-800 relative overflow-hidden">
-    <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent-500/30 to-transparent"></div>
-    <div class="orb" style="width:500px;height:500px;background:#312e81;top:50%;left:50%;transform:translate(-50%,-50%);opacity:.06;filter:blur(120px)"></div>
+    <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent-500/30 to-transparent">
+    </div>
+    <div class="orb"
+      style="width:500px;height:500px;background:#312e81;top:50%;left:50%;transform:translate(-50%,-50%);opacity:.06;filter:blur(120px)">
+    </div>
 
     <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-14">
@@ -336,7 +494,8 @@
           <p class="text-accent-400 text-sm font-semibold tracking-widest uppercase mb-3">Pilihan Editor</p>
           <h2 class="font-serif text-4xl md:text-5xl font-bold text-white">Buku Unggulan</h2>
         </div>
-        <a href="#" id="link-lihat-semua" class="inline-flex items-center gap-2 text-sm font-medium text-primary-400 hover:text-primary-300 transition-colors group">
+        <a href="#" id="link-lihat-semua"
+          class="inline-flex items-center gap-2 text-sm font-medium text-primary-400 hover:text-primary-300 transition-colors group">
           Lihat Semua Koleksi
           <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
         </a>
@@ -347,10 +506,13 @@
         <!-- Book 1: Dune -->
         <article id="book-1" class="book-card glass-card rounded-2xl overflow-hidden">
           <div class="overflow-hidden h-56 relative">
-            <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=600&q=80&auto=format&fit=crop" alt="Cover Dune" class="book-cover w-full h-full object-cover" loading="lazy" />
+            <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=600&q=80&auto=format&fit=crop"
+              alt="Cover Dune" class="book-cover w-full h-full object-cover" loading="lazy" />
             <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent"></div>
-            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full text-xs font-semibold bg-pink-500/80 text-white backdrop-blur-sm">Fiksi</span>
-            <span class="absolute top-3 right-3 flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-medium bg-green-500/80 text-white backdrop-blur-sm">
+            <span
+              class="absolute top-3 left-3 px-2.5 py-1 rounded-full text-xs font-semibold bg-pink-500/80 text-white backdrop-blur-sm">Fiksi</span>
+            <span
+              class="absolute top-3 right-3 flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-medium bg-green-500/80 text-white backdrop-blur-sm">
               <i data-lucide="circle-check" class="w-3 h-3"></i> Tersedia
             </span>
           </div>
@@ -366,8 +528,11 @@
               <span class="text-xs text-slate-500 ml-1">(4.201)</span>
             </div>
             <div class="flex gap-2">
-              <button id="detail-book-1" class="flex-1 py-2 rounded-xl border border-primary-500/40 text-primary-400 hover:bg-primary-500/10 text-sm font-medium transition-all">Detail Buku</button>
-              <button id="pinjam-book-1" class="flex-1 py-2 rounded-xl bg-primary-600 hover:bg-primary-500 text-white text-sm font-semibold transition-all hover:scale-105">Pinjam</button>
+              <button id="detail-book-1"
+                class="flex-1 py-2 rounded-xl border border-primary-500/40 text-primary-400 hover:bg-primary-500/10 text-sm font-medium transition-all">Detail
+                Buku</button>
+              <button id="pinjam-book-1"
+                class="flex-1 py-2 rounded-xl bg-primary-600 hover:bg-primary-500 text-white text-sm font-semibold transition-all hover:scale-105">Pinjam</button>
             </div>
           </div>
         </article>
@@ -375,10 +540,13 @@
         <!-- Book 2: Clean Code -->
         <article id="book-2" class="book-card glass-card rounded-2xl overflow-hidden">
           <div class="overflow-hidden h-56 relative">
-            <img src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=600&q=80&auto=format&fit=crop" alt="Cover Clean Code" class="book-cover w-full h-full object-cover" loading="lazy" />
+            <img src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=600&q=80&auto=format&fit=crop"
+              alt="Cover Clean Code" class="book-cover w-full h-full object-cover" loading="lazy" />
             <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent"></div>
-            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full text-xs font-semibold bg-cyan-500/80 text-white backdrop-blur-sm">Teknologi</span>
-            <span class="absolute top-3 right-3 flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-medium bg-green-500/80 text-white backdrop-blur-sm">
+            <span
+              class="absolute top-3 left-3 px-2.5 py-1 rounded-full text-xs font-semibold bg-cyan-500/80 text-white backdrop-blur-sm">Teknologi</span>
+            <span
+              class="absolute top-3 right-3 flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-medium bg-green-500/80 text-white backdrop-blur-sm">
               <i data-lucide="circle-check" class="w-3 h-3"></i> Tersedia
             </span>
           </div>
@@ -394,8 +562,11 @@
               <span class="text-xs text-slate-500 ml-1">(3.850)</span>
             </div>
             <div class="flex gap-2">
-              <button id="detail-book-2" class="flex-1 py-2 rounded-xl border border-primary-500/40 text-primary-400 hover:bg-primary-500/10 text-sm font-medium transition-all">Detail Buku</button>
-              <button id="pinjam-book-2" class="flex-1 py-2 rounded-xl bg-primary-600 hover:bg-primary-500 text-white text-sm font-semibold transition-all hover:scale-105">Pinjam</button>
+              <button id="detail-book-2"
+                class="flex-1 py-2 rounded-xl border border-primary-500/40 text-primary-400 hover:bg-primary-500/10 text-sm font-medium transition-all">Detail
+                Buku</button>
+              <button id="pinjam-book-2"
+                class="flex-1 py-2 rounded-xl bg-primary-600 hover:bg-primary-500 text-white text-sm font-semibold transition-all hover:scale-105">Pinjam</button>
             </div>
           </div>
         </article>
@@ -403,10 +574,13 @@
         <!-- Book 3: A Brief History of Time -->
         <article id="book-3" class="book-card glass-card rounded-2xl overflow-hidden">
           <div class="overflow-hidden h-56 relative">
-            <img src="https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?w=600&q=80&auto=format&fit=crop" alt="Cover A Brief History of Time" class="book-cover w-full h-full object-cover" loading="lazy" />
+            <img src="https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?w=600&q=80&auto=format&fit=crop"
+              alt="Cover A Brief History of Time" class="book-cover w-full h-full object-cover" loading="lazy" />
             <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent"></div>
-            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full text-xs font-semibold bg-emerald-500/80 text-white backdrop-blur-sm">Sains</span>
-            <span class="absolute top-3 right-3 flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-medium bg-green-500/80 text-white backdrop-blur-sm">
+            <span
+              class="absolute top-3 left-3 px-2.5 py-1 rounded-full text-xs font-semibold bg-emerald-500/80 text-white backdrop-blur-sm">Sains</span>
+            <span
+              class="absolute top-3 right-3 flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-medium bg-green-500/80 text-white backdrop-blur-sm">
               <i data-lucide="circle-check" class="w-3 h-3"></i> Tersedia
             </span>
           </div>
@@ -422,8 +596,11 @@
               <span class="text-xs text-slate-500 ml-1">(5.120)</span>
             </div>
             <div class="flex gap-2">
-              <button id="detail-book-3" class="flex-1 py-2 rounded-xl border border-primary-500/40 text-primary-400 hover:bg-primary-500/10 text-sm font-medium transition-all">Detail Buku</button>
-              <button id="pinjam-book-3" class="flex-1 py-2 rounded-xl bg-primary-600 hover:bg-primary-500 text-white text-sm font-semibold transition-all hover:scale-105">Pinjam</button>
+              <button id="detail-book-3"
+                class="flex-1 py-2 rounded-xl border border-primary-500/40 text-primary-400 hover:bg-primary-500/10 text-sm font-medium transition-all">Detail
+                Buku</button>
+              <button id="pinjam-book-3"
+                class="flex-1 py-2 rounded-xl bg-primary-600 hover:bg-primary-500 text-white text-sm font-semibold transition-all hover:scale-105">Pinjam</button>
             </div>
           </div>
         </article>
@@ -431,10 +608,13 @@
         <!-- Book 4: Sapiens -->
         <article id="book-4" class="book-card glass-card rounded-2xl overflow-hidden">
           <div class="overflow-hidden h-56 relative">
-            <img src="https://images.unsplash.com/photo-1462642109801-4ac2971a3a51?w=600&q=80&auto=format&fit=crop" alt="Cover Sapiens" class="book-cover w-full h-full object-cover" loading="lazy" />
+            <img src="https://images.unsplash.com/photo-1462642109801-4ac2971a3a51?w=600&q=80&auto=format&fit=crop"
+              alt="Cover Sapiens" class="book-cover w-full h-full object-cover" loading="lazy" />
             <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent"></div>
-            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full text-xs font-semibold bg-amber-500/80 text-white backdrop-blur-sm">Sejarah</span>
-            <span class="absolute top-3 right-3 flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-medium bg-green-500/80 text-white backdrop-blur-sm">
+            <span
+              class="absolute top-3 left-3 px-2.5 py-1 rounded-full text-xs font-semibold bg-amber-500/80 text-white backdrop-blur-sm">Sejarah</span>
+            <span
+              class="absolute top-3 right-3 flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-medium bg-green-500/80 text-white backdrop-blur-sm">
               <i data-lucide="circle-check" class="w-3 h-3"></i> Tersedia
             </span>
           </div>
@@ -450,8 +630,11 @@
               <span class="text-xs text-slate-500 ml-1">(6.430)</span>
             </div>
             <div class="flex gap-2">
-              <button id="detail-book-4" class="flex-1 py-2 rounded-xl border border-primary-500/40 text-primary-400 hover:bg-primary-500/10 text-sm font-medium transition-all">Detail Buku</button>
-              <button id="pinjam-book-4" class="flex-1 py-2 rounded-xl bg-primary-600 hover:bg-primary-500 text-white text-sm font-semibold transition-all hover:scale-105">Pinjam</button>
+              <button id="detail-book-4"
+                class="flex-1 py-2 rounded-xl border border-primary-500/40 text-primary-400 hover:bg-primary-500/10 text-sm font-medium transition-all">Detail
+                Buku</button>
+              <button id="pinjam-book-4"
+                class="flex-1 py-2 rounded-xl bg-primary-600 hover:bg-primary-500 text-white text-sm font-semibold transition-all hover:scale-105">Pinjam</button>
             </div>
           </div>
         </article>
@@ -459,10 +642,13 @@
         <!-- Book 5: Zero to One -->
         <article id="book-5" class="book-card glass-card rounded-2xl overflow-hidden">
           <div class="overflow-hidden h-56 relative">
-            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80&auto=format&fit=crop" alt="Cover Zero to One" class="book-cover w-full h-full object-cover" loading="lazy" />
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80&auto=format&fit=crop"
+              alt="Cover Zero to One" class="book-cover w-full h-full object-cover" loading="lazy" />
             <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent"></div>
-            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full text-xs font-semibold bg-violet-500/80 text-white backdrop-blur-sm">Bisnis</span>
-            <span class="absolute top-3 right-3 flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-medium bg-red-500/80 text-white backdrop-blur-sm">
+            <span
+              class="absolute top-3 left-3 px-2.5 py-1 rounded-full text-xs font-semibold bg-violet-500/80 text-white backdrop-blur-sm">Bisnis</span>
+            <span
+              class="absolute top-3 right-3 flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-medium bg-red-500/80 text-white backdrop-blur-sm">
               <i data-lucide="clock" class="w-3 h-3"></i> Dipinjam
             </span>
           </div>
@@ -478,8 +664,11 @@
               <span class="text-xs text-slate-500 ml-1">(3.210)</span>
             </div>
             <div class="flex gap-2">
-              <button id="detail-book-5" class="flex-1 py-2 rounded-xl border border-primary-500/40 text-primary-400 hover:bg-primary-500/10 text-sm font-medium transition-all">Detail Buku</button>
-              <button id="pinjam-book-5" disabled class="flex-1 py-2 rounded-xl bg-slate-700 text-slate-400 text-sm font-semibold cursor-not-allowed opacity-60">Antri</button>
+              <button id="detail-book-5"
+                class="flex-1 py-2 rounded-xl border border-primary-500/40 text-primary-400 hover:bg-primary-500/10 text-sm font-medium transition-all">Detail
+                Buku</button>
+              <button id="pinjam-book-5" disabled
+                class="flex-1 py-2 rounded-xl bg-slate-700 text-slate-400 text-sm font-semibold cursor-not-allowed opacity-60">Antri</button>
             </div>
           </div>
         </article>
@@ -487,10 +676,13 @@
         <!-- Book 6: Deep Learning -->
         <article id="book-6" class="book-card glass-card rounded-2xl overflow-hidden">
           <div class="overflow-hidden h-56 relative">
-            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&q=80&auto=format&fit=crop" alt="Cover Deep Learning" class="book-cover w-full h-full object-cover" loading="lazy" />
+            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&q=80&auto=format&fit=crop"
+              alt="Cover Deep Learning" class="book-cover w-full h-full object-cover" loading="lazy" />
             <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent"></div>
-            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full text-xs font-semibold bg-cyan-500/80 text-white backdrop-blur-sm">Teknologi</span>
-            <span class="absolute top-3 right-3 flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-medium bg-green-500/80 text-white backdrop-blur-sm">
+            <span
+              class="absolute top-3 left-3 px-2.5 py-1 rounded-full text-xs font-semibold bg-cyan-500/80 text-white backdrop-blur-sm">Teknologi</span>
+            <span
+              class="absolute top-3 right-3 flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-medium bg-green-500/80 text-white backdrop-blur-sm">
               <i data-lucide="circle-check" class="w-3 h-3"></i> Tersedia
             </span>
           </div>
@@ -506,8 +698,11 @@
               <span class="text-xs text-slate-500 ml-1">(2.890)</span>
             </div>
             <div class="flex gap-2">
-              <button id="detail-book-6" class="flex-1 py-2 rounded-xl border border-primary-500/40 text-primary-400 hover:bg-primary-500/10 text-sm font-medium transition-all">Detail Buku</button>
-              <button id="pinjam-book-6" class="flex-1 py-2 rounded-xl bg-primary-600 hover:bg-primary-500 text-white text-sm font-semibold transition-all hover:scale-105">Pinjam</button>
+              <button id="detail-book-6"
+                class="flex-1 py-2 rounded-xl border border-primary-500/40 text-primary-400 hover:bg-primary-500/10 text-sm font-medium transition-all">Detail
+                Buku</button>
+              <button id="pinjam-book-6"
+                class="flex-1 py-2 rounded-xl bg-primary-600 hover:bg-primary-500 text-white text-sm font-semibold transition-all hover:scale-105">Pinjam</button>
             </div>
           </div>
         </article>
@@ -521,7 +716,8 @@
     <div class="absolute inset-0 bg-gradient-to-br from-primary-900/30 via-dark-900 to-accent-600/10"></div>
     <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
       <div class="glass rounded-3xl p-10 md:p-16 border border-white/10">
-        <div class="w-16 h-16 mx-auto rounded-2xl bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center mb-6 shadow-xl shadow-primary-500/30 animate-float">
+        <div
+          class="w-16 h-16 mx-auto rounded-2xl bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center mb-6 shadow-xl shadow-primary-500/30 animate-float">
           <i data-lucide="heart" class="w-8 h-8 text-white fill-white"></i>
         </div>
         <h2 class="font-serif text-4xl md:text-5xl font-bold text-white mb-4">
@@ -531,11 +727,13 @@
           Simpan buku favorit, lacak riwayat bacaan, dan nikmati rekomendasi personal yang disesuaikan hanya untukmu.
         </p>
         <div class="flex flex-col sm:flex-row gap-3 justify-center">
-          <a href="#" id="btn-daftar-sekarang" class="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl bg-primary-600 hover:bg-primary-500 text-white font-semibold text-sm transition-all hover:scale-105 shadow-xl shadow-primary-600/30">
+          <a href="#" id="btn-daftar-sekarang"
+            class="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl bg-primary-600 hover:bg-primary-500 text-white font-semibold text-sm transition-all hover:scale-105 shadow-xl shadow-primary-600/30">
             <i data-lucide="user-plus" class="w-4 h-4"></i>
             Daftar Sekarang &mdash; Gratis
           </a>
-          <a href="#katalog" id="btn-eksplor" class="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl border border-white/15 hover:bg-white/5 text-white font-medium text-sm transition-all">
+          <a href="#katalog" id="btn-eksplor"
+            class="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl border border-white/15 hover:bg-white/5 text-white font-medium text-sm transition-all">
             <i data-lucide="compass" class="w-4 h-4"></i>
             Eksplorasi Koleksi
           </a>
@@ -551,20 +749,26 @@
 
         <div>
           <div class="flex items-center gap-2.5 mb-4">
-            <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center shadow-lg shadow-primary-500/30">
+            <div
+              class="w-9 h-9 rounded-xl bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center shadow-lg shadow-primary-500/30">
               <i data-lucide="book-open" class="w-5 h-5 text-white"></i>
             </div>
-            <span class="text-xl font-bold"><span class="text-white">Digi</span><span class="gradient-text">Lib</span></span>
+            <span class="text-xl font-bold"><span class="text-white">Digi</span><span
+                class="gradient-text">Lib</span></span>
           </div>
-          <p class="text-slate-500 text-sm leading-relaxed mb-5">Perpustakaan digital modern yang mendekatkan buku dengan pembaca di seluruh Indonesia.</p>
+          <p class="text-slate-500 text-sm leading-relaxed mb-5">Perpustakaan digital modern yang mendekatkan buku
+            dengan pembaca di seluruh Indonesia.</p>
           <div class="flex gap-3">
-            <a href="#" id="social-instagram" aria-label="Instagram DigiLib" class="w-9 h-9 rounded-lg glass flex items-center justify-center text-slate-400 hover:text-pink-400 transition-all border border-white/10">
+            <a href="#" id="social-instagram" aria-label="Instagram DigiLib"
+              class="w-9 h-9 rounded-lg glass flex items-center justify-center text-slate-400 hover:text-pink-400 transition-all border border-white/10">
               <i data-lucide="instagram" class="w-4 h-4"></i>
             </a>
-            <a href="#" id="social-twitter" aria-label="Twitter DigiLib" class="w-9 h-9 rounded-lg glass flex items-center justify-center text-slate-400 hover:text-sky-400 transition-all border border-white/10">
+            <a href="#" id="social-twitter" aria-label="Twitter DigiLib"
+              class="w-9 h-9 rounded-lg glass flex items-center justify-center text-slate-400 hover:text-sky-400 transition-all border border-white/10">
               <i data-lucide="twitter" class="w-4 h-4"></i>
             </a>
-            <a href="#" id="social-youtube" aria-label="YouTube DigiLib" class="w-9 h-9 rounded-lg glass flex items-center justify-center text-slate-400 hover:text-red-400 transition-all border border-white/10">
+            <a href="#" id="social-youtube" aria-label="YouTube DigiLib"
+              class="w-9 h-9 rounded-lg glass flex items-center justify-center text-slate-400 hover:text-red-400 transition-all border border-white/10">
               <i data-lucide="youtube" class="w-4 h-4"></i>
             </a>
           </div>
@@ -573,11 +777,13 @@
         <div>
           <h4 class="text-white font-semibold text-sm mb-4">Navigasi</h4>
           <ul class="space-y-3">
-            <li><a href="#beranda"  class="text-slate-500 hover:text-white text-sm transition-colors">Beranda</a></li>
-            <li><a href="#katalog"  class="text-slate-500 hover:text-white text-sm transition-colors">Katalog Buku</a></li>
+            <li><a href="#beranda" class="text-slate-500 hover:text-white text-sm transition-colors">Beranda</a></li>
+            <li><a href="#katalog" class="text-slate-500 hover:text-white text-sm transition-colors">Katalog Buku</a>
+            </li>
             <li><a href="#kategori" class="text-slate-500 hover:text-white text-sm transition-colors">Kategori</a></li>
-            <li><a href="#favorit"  class="text-slate-500 hover:text-white text-sm transition-colors">Favorit Saya</a></li>
-            <li><a href="#"         class="text-slate-500 hover:text-white text-sm transition-colors">Riwayat Bacaan</a></li>
+            <li><a href="#favorit" class="text-slate-500 hover:text-white text-sm transition-colors">Favorit Saya</a>
+            </li>
+            <li><a href="#" class="text-slate-500 hover:text-white text-sm transition-colors">Riwayat Bacaan</a></li>
           </ul>
         </div>
 
@@ -586,7 +792,8 @@
           <ul class="space-y-3">
             <li><a href="#" class="text-slate-500 hover:text-white text-sm transition-colors">Cara Meminjam</a></li>
             <li><a href="#" class="text-slate-500 hover:text-white text-sm transition-colors">Kebijakan Privasi</a></li>
-            <li><a href="#" class="text-slate-500 hover:text-white text-sm transition-colors">Syarat &amp; Ketentuan</a></li>
+            <li><a href="#" class="text-slate-500 hover:text-white text-sm transition-colors">Syarat &amp; Ketentuan</a>
+            </li>
             <li><a href="#" class="text-slate-500 hover:text-white text-sm transition-colors">FAQ</a></li>
             <li><a href="#" class="text-slate-500 hover:text-white text-sm transition-colors">Blog</a></li>
           </ul>
@@ -601,11 +808,13 @@
             </li>
             <li class="flex items-center gap-3">
               <i data-lucide="phone" class="w-4 h-4 text-primary-400 flex-shrink-0"></i>
-              <a href="tel:+62211234567" class="text-slate-500 hover:text-white text-sm transition-colors">(021) 123-4567</a>
+              <a href="tel:+62211234567" class="text-slate-500 hover:text-white text-sm transition-colors">(021)
+                123-4567</a>
             </li>
             <li class="flex items-center gap-3">
               <i data-lucide="mail" class="w-4 h-4 text-primary-400 flex-shrink-0"></i>
-              <a href="mailto:halo@digilib.id" class="text-slate-500 hover:text-white text-sm transition-colors">halo@digilib.id</a>
+              <a href="mailto:halo@digilib.id"
+                class="text-slate-500 hover:text-white text-sm transition-colors">halo@digilib.id</a>
             </li>
             <li class="flex items-center gap-3">
               <i data-lucide="clock" class="w-4 h-4 text-primary-400 flex-shrink-0"></i>
@@ -618,7 +827,8 @@
 
       <div class="pt-8 border-t border-white/6 flex flex-col sm:flex-row items-center justify-between gap-4">
         <p class="text-slate-600 text-sm">&copy; 2026 DigiLib. Seluruh hak cipta dilindungi.</p>
-        <p class="text-slate-600 text-sm">Dibuat dengan <span class="text-red-500">&hearts;</span> untuk para pembaca Indonesia.</p>
+        <p class="text-slate-600 text-sm">Dibuat dengan <span class="text-red-500">&hearts;</span> untuk para pembaca
+          Indonesia.</p>
       </div>
     </div>
   </footer>
@@ -639,8 +849,8 @@
     }, { passive: true });
 
     // Mobile menu
-    const hamburgerBtn  = document.getElementById("hamburger-btn");
-    const mobileMenu    = document.getElementById("mobile-menu");
+    const hamburgerBtn = document.getElementById("hamburger-btn");
+    const mobileMenu = document.getElementById("mobile-menu");
     const hamburgerIcon = document.getElementById("hamburger-icon");
     hamburgerBtn.addEventListener("click", () => {
       const isOpen = mobileMenu.classList.contains("open");
@@ -712,7 +922,8 @@
   </script>
 
   <!-- ==================== BOOK DETAIL MODAL ==================== -->
-  <div id="book-modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-describedby="modal-synopsis">
+  <div id="book-modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title"
+    aria-describedby="modal-synopsis">
     <div id="book-modal-panel">
 
       <!-- Cover image -->
@@ -725,9 +936,9 @@
 
         <!-- Badge + close button row -->
         <div class="flex items-start justify-between gap-3 mb-4">
-          <span id="modal-badge" class="inline-block px-3 py-1 rounded-full text-xs font-semibold text-white">Kategori</span>
-          <button id="modal-close-btn"
-            aria-label="Tutup modal"
+          <span id="modal-badge"
+            class="inline-block px-3 py-1 rounded-full text-xs font-semibold text-white">Kategori</span>
+          <button id="modal-close-btn" aria-label="Close Modal"
             class="flex-shrink-0 w-9 h-9 rounded-xl flex items-center justify-center text-slate-400 hover:text-white bg-white/5 hover:bg-white/10 border border-white/8 transition-all duration-200">
             <i data-lucide="x" class="w-4 h-4"></i>
           </button>
@@ -803,116 +1014,116 @@
     // ── Book data store ──────────────────────────────────────────────────
     const BOOKS = {
       1: {
-        title:    "Dune",
-        author:   "Frank Herbert",
+        title: "Dune",
+        author: "Frank Herbert",
         category: "Fiksi",
         badgeColor: "bg-pink-500",
-        cover:    "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=800&q=85&auto=format&fit=crop",
-        year:     "1965",
-        pages:    "688",
-        lang:     "Inggris",
-        status:   "Tersedia",
+        cover: "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=800&q=85&auto=format&fit=crop",
+        year: "1965",
+        pages: "688",
+        lang: "Inggris",
+        status: "Tersedia",
         statusOk: true,
-        rating:   5,
+        rating: 5,
         ratingCount: "4.201 ulasan",
         synopsis: "Di gurun pasir planet Arrakis, Paul Atreides muda menemukan takdirnya di tengah intrik kekuasaan, agama, dan persaingan antar-dinasti galaksi. Dune adalah mahakarya fiksi ilmiah yang menggabungkan ekologi, politik, dan mitologi menjadi epos yang tak tertandingi. Novel pemenang Hugo Award dan Nebula Award ini telah menginspirasi generasi penulis dan sineas di seluruh dunia."
       },
       2: {
-        title:    "Clean Code",
-        author:   "Robert C. Martin",
+        title: "Clean Code",
+        author: "Robert C. Martin",
         category: "Teknologi",
         badgeColor: "bg-cyan-500",
-        cover:    "https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=800&q=85&auto=format&fit=crop",
-        year:     "2008",
-        pages:    "464",
-        lang:     "Inggris",
-        status:   "Tersedia",
+        cover: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=800&q=85&auto=format&fit=crop",
+        year: "2008",
+        pages: "464",
+        lang: "Inggris",
+        status: "Tersedia",
         statusOk: true,
-        rating:   4,
+        rating: 4,
         ratingCount: "3.850 ulasan",
         synopsis: "Panduan esensial bagi setiap programmer profesional. Robert C. Martin (Uncle Bob) mengajarkan seni menulis kode yang bersih, mudah dibaca, dan mudah dipelihara. Buku ini membahas prinsip SOLID, refactoring, unit testing, dan puluhan teknik nyata lewat contoh kode Java yang konkret. Wajib baca bagi siapa pun yang ingin menjadi software engineer yang lebih baik."
       },
       3: {
-        title:    "A Brief History of Time",
-        author:   "Stephen Hawking",
+        title: "A Brief History of Time",
+        author: "Stephen Hawking",
         category: "Sains",
         badgeColor: "bg-emerald-500",
-        cover:    "https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?w=800&q=85&auto=format&fit=crop",
-        year:     "1988",
-        pages:    "212",
-        lang:     "Inggris",
-        status:   "Tersedia",
+        cover: "https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?w=800&q=85&auto=format&fit=crop",
+        year: "1988",
+        pages: "212",
+        lang: "Inggris",
+        status: "Tersedia",
         statusOk: true,
-        rating:   5,
+        rating: 5,
         ratingCount: "5.120 ulasan",
         synopsis: "Perjalanan ilmiah yang luar biasa dari Big Bang hingga lubang hitam, dari teori relativitas hingga mekanika kuantum — dijelaskan oleh salah satu pikiran terbesar abad ke-20. Hawking berhasil menyederhanakan konsep fisika paling rumit menjadi bacaan yang memikat bagi pembaca awam tanpa mengorbankan kedalaman ilmiahnya. Lebih dari 25 juta eksemplar terjual di seluruh dunia."
       },
       4: {
-        title:    "Sapiens: A Brief History of Humankind",
-        author:   "Yuval Noah Harari",
+        title: "Sapiens: A Brief History of Humankind",
+        author: "Yuval Noah Harari",
         category: "Sejarah",
         badgeColor: "bg-amber-500",
-        cover:    "https://images.unsplash.com/photo-1462642109801-4ac2971a3a51?w=800&q=85&auto=format&fit=crop",
-        year:     "2011",
-        pages:    "443",
-        lang:     "Indonesia",
-        status:   "Tersedia",
+        cover: "https://images.unsplash.com/photo-1462642109801-4ac2971a3a51?w=800&q=85&auto=format&fit=crop",
+        year: "2011",
+        pages: "443",
+        lang: "Indonesia",
+        status: "Tersedia",
         statusOk: true,
-        rating:   5,
+        rating: 5,
         ratingCount: "6.430 ulasan",
         synopsis: "Dari batu api hingga revolusi digital, Harari menelusuri perjalanan Homo Sapiens dengan cara yang mengejutkan dan provokatif. Mengapa spesies kita menguasai bumi? Apa yang membuat kita berbeda dari hominid lain? Buku ini menjawab pertanyaan terbesar tentang sejarah manusia dengan perspektif yang segar, interdisipliner, dan kadang menggelisahkan — mengubah cara Anda melihat diri sendiri dan dunia."
       },
       5: {
-        title:    "Zero to One",
-        author:   "Peter Thiel",
+        title: "Zero to One",
+        author: "Peter Thiel",
         category: "Bisnis",
         badgeColor: "bg-violet-500",
-        cover:    "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=85&auto=format&fit=crop",
-        year:     "2014",
-        pages:    "195",
-        lang:     "Indonesia",
-        status:   "Dipinjam",
+        cover: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=85&auto=format&fit=crop",
+        year: "2014",
+        pages: "195",
+        lang: "Indonesia",
+        status: "Dipinjam",
         statusOk: false,
-        rating:   4,
+        rating: 4,
         ratingCount: "3.210 ulasan",
         synopsis: "Co-founder PayPal dan investor pertama Facebook berbagi filosofinya tentang inovasi sejati. Thiel berargumen bahwa kemajuan terbaik lahir dari ide-ide yang benar-benar baru (0 ke 1), bukan sekadar menyalin yang sudah ada (1 ke n). Buku ini berisi pelajaran dari pengalamannya membangun startup dan cara membangun perusahaan yang benar-benar mengubah dunia."
       },
       6: {
-        title:    "Deep Learning",
-        author:   "Ian Goodfellow, Yoshua Bengio, Aaron Courville",
+        title: "Deep Learning",
+        author: "Ian Goodfellow, Yoshua Bengio, Aaron Courville",
         category: "Teknologi",
         badgeColor: "bg-cyan-500",
-        cover:    "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=85&auto=format&fit=crop",
-        year:     "2016",
-        pages:    "775",
-        lang:     "Inggris",
-        status:   "Tersedia",
+        cover: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=85&auto=format&fit=crop",
+        year: "2016",
+        pages: "775",
+        lang: "Inggris",
+        status: "Tersedia",
         statusOk: true,
-        rating:   5,
+        rating: 5,
         ratingCount: "2.890 ulasan",
         synopsis: "Buku referensi definitif untuk pembelajaran mendalam (deep learning) yang ditulis oleh tiga pionir di bidang kecerdasan buatan. Mencakup aljabar linear, probabilitas, optimasi, jaringan saraf konvolusi (CNN), jaringan saraf rekuren (RNN), hingga generative model. Tersedia juga secara gratis di deeplearningbook.org. Bacaan wajib bagi siapa pun yang serius menekuni AI dan machine learning."
       }
     };
 
     // ── DOM refs ─────────────────────────────────────────────────────────
-    const overlay        = document.getElementById("book-modal-overlay");
-    const modalCover     = document.getElementById("modal-cover");
-    const modalBadge     = document.getElementById("modal-badge");
-    const modalTitle     = document.getElementById("modal-title");
+    const overlay = document.getElementById("book-modal-overlay");
+    const modalCover = document.getElementById("modal-cover");
+    const modalBadge = document.getElementById("modal-badge");
+    const modalTitle = document.getElementById("modal-title");
     const modalAuthorSpan = document.querySelector("#modal-author span");
-    const modalYear      = document.getElementById("modal-year");
-    const modalPages     = document.getElementById("modal-pages");
-    const modalLang      = document.getElementById("modal-lang");
-    const modalStatus    = document.getElementById("modal-status");
-    const modalStars     = document.getElementById("modal-stars");
+    const modalYear = document.getElementById("modal-year");
+    const modalPages = document.getElementById("modal-pages");
+    const modalLang = document.getElementById("modal-lang");
+    const modalStatus = document.getElementById("modal-status");
+    const modalStars = document.getElementById("modal-stars");
     const modalRatingLbl = document.getElementById("modal-rating-label");
-    const modalSynopsis  = document.getElementById("modal-synopsis");
-    const modalConfirm   = document.getElementById("modal-btn-confirm");
-    const modalWishlist  = document.getElementById("modal-btn-wishlist");
+    const modalSynopsis = document.getElementById("modal-synopsis");
+    const modalConfirm = document.getElementById("modal-btn-confirm");
+    const modalWishlist = document.getElementById("modal-btn-wishlist");
 
     // ── Helpers ──────────────────────────────────────────────────────────
     function renderStars(count) {
-      const full  = '<i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>';
+      const full = '<i data-lucide="star" class="w-4 h-4 text-yellow-400 fill-yellow-400"></i>';
       const empty = '<i data-lucide="star" class="w-4 h-4 text-slate-600"></i>';
       return full.repeat(count) + empty.repeat(5 - count);
     }
@@ -922,29 +1133,29 @@
       if (!b) return;
 
       // Populate fields
-      modalCover.src       = b.cover;
-      modalCover.alt       = "Cover " + b.title;
+      modalCover.src = b.cover;
+      modalCover.alt = "Cover " + b.title;
       modalBadge.textContent = b.category;
-      modalBadge.className   = "inline-block px-3 py-1 rounded-full text-xs font-semibold text-white " + b.badgeColor + "/80";
+      modalBadge.className = "inline-block px-3 py-1 rounded-full text-xs font-semibold text-white " + b.badgeColor + "/80";
       modalTitle.textContent = b.title;
       modalAuthorSpan.textContent = b.author;
-      modalYear.textContent  = b.year;
+      modalYear.textContent = b.year;
       modalPages.textContent = b.pages + " hal";
-      modalLang.textContent  = b.lang;
+      modalLang.textContent = b.lang;
 
       // Status chip
       if (b.statusOk) {
         modalStatus.textContent = b.status;
-        modalStatus.className   = "mt-0.5 text-green-400";
+        modalStatus.className = "mt-0.5 text-green-400";
       } else {
         modalStatus.textContent = b.status;
-        modalStatus.className   = "mt-0.5 text-red-400";
+        modalStatus.className = "mt-0.5 text-red-400";
       }
 
       // Stars
-      modalStars.innerHTML    = renderStars(b.rating);
+      modalStars.innerHTML = renderStars(b.rating);
       modalRatingLbl.textContent = b.ratingCount;
-      modalSynopsis.textContent  = b.synopsis;
+      modalSynopsis.textContent = b.synopsis;
 
       // Confirm button state
       if (b.statusOk) {
@@ -1003,7 +1214,7 @@
     // ── Confirm Pinjam ────────────────────────────────────────────────────
     modalConfirm.addEventListener("click", function () {
       if (this.disabled) return;
-      const id    = this.dataset.bookId;
+      const id = this.dataset.bookId;
       const title = BOOKS[id] ? BOOKS[id].title : "buku ini";
 
       // Animate button
@@ -1018,7 +1229,7 @@
         // Reset button after modal closes
         setTimeout(() => {
           this.innerHTML = '<i data-lucide="book-marked" class="w-4 h-4"></i> Konfirmasi Pinjam';
-          this.className = this.className.replace("bg-green-600","bg-primary-600").replace("hover:bg-green-500","hover:bg-primary-500");
+          this.className = this.className.replace("bg-green-600", "bg-primary-600").replace("hover:bg-green-500", "hover:bg-primary-500");
           lucide.createIcons();
         }, 400);
       }, 1200);
@@ -1026,7 +1237,7 @@
 
     // ── Wishlist button ───────────────────────────────────────────────────
     modalWishlist.addEventListener("click", function () {
-      const id    = modalConfirm.dataset.bookId;
+      const id = modalConfirm.dataset.bookId;
       const title = BOOKS[id] ? BOOKS[id].title : "buku ini";
       this.innerHTML = '<i data-lucide="heart" class="w-4 h-4 fill-red-400 text-red-400"></i> Tersimpan!';
       lucide.createIcons();
@@ -1048,12 +1259,12 @@
       toast.setAttribute("role", "status");
       toast.setAttribute("aria-live", "polite");
       toast.style.cssText = [
-        "position:fixed","bottom:5.5rem","left:50%","transform:translateX(-50%) translateY(20px)",
-        "z-index:10000","background:linear-gradient(135deg,#1e293b,#0f172a)",
-        "border:1px solid rgba(99,102,241,.35)","border-radius:1rem",
-        "padding:.75rem 1.25rem","color:#e2e8f0","font-size:.85rem",
-        "box-shadow:0 20px 40px rgba(0,0,0,.5)","display:flex","align-items:center","gap:.6rem",
-        "opacity:0","transition:opacity .3s ease, transform .3s ease","max-width:90vw","white-space:nowrap"
+        "position:fixed", "bottom:5.5rem", "left:50%", "transform:translateX(-50%) translateY(20px)",
+        "z-index:10000", "background:linear-gradient(135deg,#1e293b,#0f172a)",
+        "border:1px solid rgba(99,102,241,.35)", "border-radius:1rem",
+        "padding:.75rem 1.25rem", "color:#e2e8f0", "font-size:.85rem",
+        "box-shadow:0 20px 40px rgba(0,0,0,.5)", "display:flex", "align-items:center", "gap:.6rem",
+        "opacity:0", "transition:opacity .3s ease, transform .3s ease", "max-width:90vw", "white-space:nowrap"
       ].join(";");
 
       toast.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>' + msg;
@@ -1061,13 +1272,13 @@
 
       requestAnimationFrame(() => {
         requestAnimationFrame(() => {
-          toast.style.opacity  = "1";
+          toast.style.opacity = "1";
           toast.style.transform = "translateX(-50%) translateY(0)";
         });
       });
 
       setTimeout(() => {
-        toast.style.opacity   = "0";
+        toast.style.opacity = "0";
         toast.style.transform = "translateX(-50%) translateY(10px)";
         setTimeout(() => toast.remove(), 350);
       }, 3500);
@@ -1075,4 +1286,5 @@
   </script>
 
 </body>
+
 </html>
